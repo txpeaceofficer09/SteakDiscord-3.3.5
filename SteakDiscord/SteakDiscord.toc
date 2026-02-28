@@ -1,0 +1,4 @@
+## Interface: 30300
+## Title: SteakDiscord
+## Notes: Extract guild discord link from GMOTD and announce it to the raid.
+Core.lua
