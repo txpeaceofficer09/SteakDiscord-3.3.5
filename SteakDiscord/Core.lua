@@ -8,6 +8,8 @@ local function SendDiscordToRaid()
 	local motd = GetGuildRosterMOTD()
 	local link = ExtractDiscordLink(motd)
 
+	if not link then link = ExtractDiscordLink(GetGuildInfoText()) end
+
 	if link then
 		if GetNumRaidMembers() > 0 then
 			SendChatMessage("We just met you, and this is crazy, but here's our discord ("..link.."), so logon maybe?", "RAID")
@@ -31,7 +33,7 @@ f:SetScript("OnEvent", function()
 	btn:SetText("Discord")
 
 	--btn:SetPoint("TOPRIGHT", RaidFrame, "TOPRIGHT", -10, -10)
-	btn:SetPoint("RIGHT", FriendsFrameCloseButton, "LEFT", -2, 0)
+	btn:SetPoint("RIGHT", FriendsFrameCloseButton, "LEFT", 5, 0)
 
 	btn:SetScript("OnClick", SendDiscordToRaid)
 end)
