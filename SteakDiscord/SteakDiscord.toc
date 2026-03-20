@@ -1,4 +1,6 @@
 ## Interface: 30300
 ## Title: SteakDiscord
 ## Notes: Extract guild discord link from GMOTD and announce it to the raid.
+## Version: 1.0.0
+## Author: SoonBeSteak
 Core.lua
