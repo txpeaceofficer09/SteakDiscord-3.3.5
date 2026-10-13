@@ -11,12 +11,15 @@ local function SendDiscordToRaid()
 	if not link then link = ExtractDiscordLink(GetGuildInfoText()) end
 
 	if link then
+		local msg = ("We just met you, and this is crazy, but here's our discord (%s), so logon maybe?"):format(link)
+
 		if GetNumRaidMembers() > 0 then
-			SendChatMessage("We just met you, and this is crazy, but here's our discord ("..link.."), so logon maybe?", "RAID")
+			SendChatMessage(msg, "RAID")
 		elseif GetNumPartyMembers() > 0 then
-			SendChatMessage("We just met you, and this is crazy, but here's our discord ("..link.."), so logon maybe?", "PARTY")
+			SendChatMessage(msg, "PARTY")
 		else
-			print("|cffff5555You are not in a group.")
+			--print("|cffff5555You are not in a group.")
+			SendChatMessage(msg, "GUILD")
 		end
 	else
 		print("|cffff5555No Discord link found in GMOTD.|r")
